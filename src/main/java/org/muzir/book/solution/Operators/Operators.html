@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../style.css" type="text/css">
+<title>Operators Chapter Notes</title>
+</head>
+<body>
+	<p class="page">Page 119</p>
+	<p>int x=0,y=1,z=2;</p>
+	<p>String eval="";</p>
+	<p>print(eval + x+y+z);</p>
+	<p>Output:"012" not 3 because compiler evaluate left to right and
+		convert ints to strings.</p>
+	<p class="page">Page 120</p>
+	<p>
+		If you cast to int to long it is <em>widening</em> no risk to lose
+		information so no need to cast explicitly. But when long cast to int
+		there is risk to lose information so need explicit cast. Java lets
+		each primitive types cast to each other(except boolean).
+	</p>
+	<p class="page">Page 122</p>
+	<p>
+		Casting from double or float to int truncates the value. If you want
+		to round it use Java.Lang.Math <a
+			href="http://docs.oracle.com/javase/6/docs/api/java/lang/Math.html#round%28double%29">round
+			method</a>
+	</p>
+	<p>float f=0.7f;</p>
+	<p>int i=f;</p>
+	<p>print(i);</p>
+	<p>Output:0</p>
+	<p class="page">Page 122</p>
+	<p>
+		<em>Narrowing and Widening</em> Primitives types which are smaller
+		than int(like char,byte, short) first cast to int before any
+		mathematical and bitwise operations. After operations results are int
+		and need to cast explicitly(because narrowing).
+	</p>
+	<p class="page">Page 123</p>
+	<p>
+		Java has no need <a href="http://en.wikipedia.org/wiki/Sizeof">sizeOf()</a>
+		because JVM provide portability each machine have same size for
+		primitive types. In C and C++ sizeof() return different byte size
+		according to machine architecture(like 32 bits or 64 bits)
+	</p>
+	<p class="page">Page 133</p>
+	<p>For ints : If you multiply big int value; result is overflow
+		with no warnings or errors.For example:</p>
+	<p>int big=2147483647;</p>
+	<p>int bigger= big*4;</p>
+	<p>print(bigger);</p>
+	<p>Output:-4(Overflow int)</p>
+</body>
+</html>

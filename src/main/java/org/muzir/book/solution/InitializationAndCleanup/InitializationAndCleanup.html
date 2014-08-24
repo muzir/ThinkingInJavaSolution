@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>InitializationAndCleanup</title>
+<link rel="stylesheet" href="../style.css" style="text/css">
+</head>
+<body>
+	<p class="page">Page 157</p>
+	<p>Atomicity of allocation and initialization: "new" operator
+		allocates memory for new object, if allocation successful then
+		constructor call for initialization</p>
+	<p class="page">Page 172</p>
+	<p>Some people argue that static methods are not object-oriented,
+		since they do have the semantics of a global method; with a static
+		method, you don't send a message to an object, since there is no this.</p>
+	<p>This is probably a fair argument, and if you find yourself using
+		a lot of static methods, you should probably rethink your
+		strategy.However, statics are pragmatic, and there are times when
+		actually need them.</p>
+	<p class="page">Page 172</p>
+	<p>There is no "this" for inside static context. You can not call
+		non-static methods inside static methods.</p>
+	<p class="page">Page 174</p>
+	<p>finalize()method is necessary for C like allocation like Native
+		method call from Java. because this kind of call create object with
+		alloc(or malloc) and Java GC don't realize these objects so finalize
+		usage can be suitable for this case</p>
+	<p class="page">Page 175</p>
+	<p>Joshua Block mention in Effective Java avoid finalizers.
+		Finalizers are unprediactable, often dangerous and generally
+		unnecesary.</p>
+	<p class="page">Page 178</p>
+	<p>Reference counting is a simple and slow approach, each object
+		has a reference counter when a reference point object its increase the
+		count, if reference is out of scope or set null decrease the
+		counter.JVM collect object's which reference count is 0. But it
+		doesn't seem to be used in any JVM implementation.</p>
+	<p class="page">Page 178</p>
+	<p>
+		C++ heap as a yard where each object stakes out its own piece of turf.
+		In some JVMs, the Java Heap is quite different; it is more like <a
+			href="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/f2666f37283ef30d8ca46f9c46267430/medium.gif">a
+			conveyor belt</a> that moves forward into virgin territory, so it's
+		effectively the same as C++'s stack allocation.
+	</p>
+	<p class="page">Page 178</p>
+	<p>You might observe that heap isn't in fact a conveyor belt, and
+		if you treat in that way, you'll start paging memory-moving it on and
+		off disk, so that you can appear to have more memory than you actually
+		do. Paging significantly impacts performance. Eventually, after you
+		create enough objects, you'll run out of memory. The tricks is that
+		the garbage collector steps in, and while it collects the garbage it
+		compacts all the objects in the heap so that you have effectively
+		moved the "heap pointer" closer to the beginning of the conveyor belt
+		and farther away from a page fault. The garbage collector rearranges
+		things and make it possible for the high speed, infinite-free-heap
+		model to be used while allocating storage."</p>
+	<p class="page">Page 179</p>
+	<p>In faster schemes, garbage collection is not based on reference
+		counting. Instead, it is based on the idea that any non-dead object
+		must ultimately be traceable back to reference that lives either on
+		the stack or in the static storage. The chain might go through several
+		layers of objects. Thus, if you start in the stack and in the static
+		storage area and walk through all the references, you will find all
+		the live objects. For each reference that you find, you must trace
+		into the objects they point to, etc., until you've moved through the
+		entire Web that originated with the references on the stack or in the
+		static storage. Each object that you move through must still be alive.
+		Note that there is no problem with detached self-referential
+		groups(like new Person() not have references(handler))these are simply
+		not found, and are therefore automatically garbage.</p>
+	<p class="page">Page 179</p>
+	<p>
+		In the approach described here, the JVM uses an <i>adaptive</i>
+		garbage-collection scheme, and what it does with the live objects that
+		it locates depends on the variant currently being used. One of these
+		variants is <i>stop-and-copy.</i>This means that-for reasons that will
+		become apparent-the program is first stopped. Then, each live objects
+		is copied from one heap to another, leaving behind all the garbage. In
+		addition, as the objects are copied into the new heap, they are packed
+		end-to-end, thus compacting the new heap.
+	</p>
+	<p class="page">Page 179-180</p>
+	<p>There are two issues that make these so-called "copy collectors"
+		inefficient. The first is the idea that you have two heaps and you
+		slosh all the memory back and forth between these two separate heaps,
+		maintaining twice as much memory as you actually need.Some JVMs deal
+		with this by allocating the heap in chunks as needed and simply
+		copying from one chunk to another.</p>
+	<p class="page">Page 180</p>
+	<p>
+		The second issue is the copying process itself. Once your program
+		becaomes stable, it might be generating little or no garbage.Despite
+		that, a copy collector will still copy all the memory from one place
+		to another, which is wasteful. To prevent this, some JVMs detect that
+		no new garbage is being generated and switch to different scheme(this
+		is "adaptive" part).This other scheme is called <i>mark-and-sweep</i>,
+		and it's what earlier versions of Sun's JVM used all the time. For
+		general use, mark-and-sweep is fairly slow, but when you know you're
+		generating little or no garbage, it's fast.
+	</p>
+	<p class="page">Page 181</p>
+	<p>The JVM monitors the efficiency of garbage collection and if it
+		becomes a waste of time because all objects are long-lived, the it
+		switched to mark-and-sweep. Similarly, the JVM keeps track of how
+		sucessful mark-and-sweep is, and if the heap starts to become
+		fragmented, it switches back to stop-and-copy. This is where the
+		"adaptive" part comes in, so you end up with a mouthful:"Adaptive
+		generational stop-and-copy mark-and-sweep."</p>
+	<p class="page">Page 181</p>
+	<p>
+		There are a number of additional speedups possible in JVM. An
+		especially important one involves the operation of the loader and what
+		is called a <i>just-in-time(JIT)</i> compiler. A JIT compiler
+		partially or fully converts a program into native machine code so that
+		it doesn't need to be loaded(typically, the first time you want to
+		create an object of that class), the .class file is located, and the
+		bytecodes for that class are brought into memory. At this point, one
+		approach is to simply JIT compile all the code, but this has two
+		drawbacks: It takes a little more time, which, compounded throughout
+		the life of the program, can add up; and it increases the size of the
+		executable (bytecodes are significantly more compact than expanded JIT
+		code), and this might cause paging, which definitely slows down a
+		program. An alternative approach is lazy evaluation, which means that
+		the code is not JIT compiled until necessary. Thus Java HotSpot
+		technologies in recent JDKs take a similar approach by increasingly
+		optimizing a piece of code each time it is executed, so the more the
+		code is executed, faster it gets.
+	</p>
+	<p class="page">Page 187</p>
+	<p>You can not apply the static keyword to local variables, so it
+		only applies to class fields. If a field is a static primitive type
+		and you don't initialize it, it gets the standard initial value for
+		its type.</p>
+	<p class="page">Page 188</p>
+	<p>Static objects are created once, They are initialized only when
+		the first Table object is created(or the first static access occurs)
+		After that the static access are not reinitialized.</p>
+	<p class="page">Page 189</p>
+	<p>The order of initialization is statics first if they haven't
+		already been initialized by a previous object creation and then the
+		non-static objects.</p>
+	<p class="page">Page 191</p>
+	<p>The static initializers for Cups run when either the access of
+		the static object cup1 occurs like:</p>
+	Cups.cup1.f(99);
+	<p>
+	<p>class Cups{</p>
+	<p>static Cup cup1;</p>
+	<p>static Cup cup2;</p>
+	<p>static{</p>
+	<p>cup1=new Cup(1);</p>
+	<p>cup2=new Cup(2);</p>
+	<p>}</p>
+	<p>Cups{</p>
+	<p>print("Cups()")</p>
+	<p>}Output</p>
+	<p>Cups(1)</p>
+	<p>Cup(2)</p>
+	<p>f(99)</p>
+	<p class="page">Page 201</p>
+	<p>It's possible to use any type of argument in varargs, including
+		primitive type.</p>
+	<p>f(Character... args)</p>
+	<p>or</p>
+	<p>g(int... args)</p>
+</body>
+</html>
