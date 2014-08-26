@@ -6,6 +6,25 @@
 <link href="../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<p class="page">Page 209</p>
+	<p class="page">Page 214</p>
+	<p>Creating unique package name; the first part of the package name
+		is the reversed internet domain name of the creator of the class.
+		Since internet domain name guarantees to be unique.
+		Ex:net.mindview.simple</p>
+	<p class="page">Page 214</p>
+	<p>CLASSPATH contains one or more directories that are used as
+		roots in a search for .class files. Starting at that root, the
+		interpreter will take the package name and replace each dot with a
+		slash to generate a path name of the CLASSPATH package foo.bar.baz
+		become foo/bar/baz or foo\bar\baz or something else depending on the
+		operating system</p>
+	<p class="page">Page 220</p>
+	<p>main class not found exception is always about this package
+		structure issues. Package name should be implement in a directory
+		structure.</p>
+	<p>javac Simple.java is not a problem to find but if Simple.java
+		contains a package name like foo and you create .class file a
+		different structure than foo folder so it is not found by JVM when
+		type java Simple</p>
 </body>
 </html>
