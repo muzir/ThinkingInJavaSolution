@@ -5,6 +5,9 @@ enum ShapeType {
 }
 
 class Shape {
+
+	protected int shapeId = 0;
+
 	public Shape(ShapeType type) {
 		cycleType = type;
 	}
@@ -12,13 +15,19 @@ class Shape {
 	private ShapeType cycleType;
 
 	public void ride() {
-		System.out.println("Cycle type:" + cycleType.name());
+		System.out.println("Cycle type:" + cycleType.name() + " shapeId : "
+				+ shapeId);
+	}
+
+	public int getShapeId() {
+		return shapeId;
 	}
 }
 
 class Sphere extends Shape {
 	public Sphere() {
 		super(ShapeType.SPHERE);
+		shapeId = 1;
 	}
 }
 
@@ -26,6 +35,7 @@ class Ellipsis extends Shape {
 
 	public Ellipsis() {
 		super(ShapeType.ELLIPSIS);
+		shapeId = 2;
 	}
 }
 
@@ -33,6 +43,7 @@ class Cone extends Shape {
 
 	public Cone() {
 		super(ShapeType.CONE);
+		shapeId = 3;
 	}
 
 }
