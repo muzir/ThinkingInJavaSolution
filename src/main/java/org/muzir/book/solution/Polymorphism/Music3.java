@@ -1,11 +1,8 @@
 package org.muzir.book.solution.Polymorphism;
 
-class Instrument {
+import org.muzir.book.solution.Commons.CommonBase;
 
-	protected void print(String string) {
-		System.out.println(string);
-
-	}
+class Instrument extends CommonBase {
 
 	void play(Note n) {
 		print("Instrument.play() " + n);
