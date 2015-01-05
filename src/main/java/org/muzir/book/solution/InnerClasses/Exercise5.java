@@ -2,6 +2,10 @@ package org.muzir.book.solution.InnerClasses;
 
 import org.muzir.book.solution.InnerClasses.Animal.Chetah;
 
+/**
+ * @author muzir
+ *
+ */
 class Animal {
 
 	public Chetah getChetah() {
@@ -15,6 +19,10 @@ class Animal {
 	}
 }
 
+/**
+ * @author muzir
+ *
+ */
 public class Exercise5 {
 
 	public static void main(String[] args) {

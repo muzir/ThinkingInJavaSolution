@@ -2,6 +2,10 @@
 // Holds a sequence of Objects.
 package org.muzir.book.solution.InnerClasses;
 
+/**
+ * @author muzir
+ *
+ */
 interface Selector {
 	boolean end();
 
@@ -10,6 +14,10 @@ interface Selector {
 	void next();
 }
 
+/**
+ * @author muzir
+ *
+ */
 public class Sequence {
 	private Object[] items;
 	private int next = 0;

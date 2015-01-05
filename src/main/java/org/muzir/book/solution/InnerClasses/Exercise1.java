@@ -2,6 +2,10 @@ package org.muzir.book.solution.InnerClasses;
 
 import org.muzir.book.solution.InnerClasses.Outer.Inner;
 
+/**
+ * @author muzir
+ *
+ */
 class Outer {
 	private String type;
 
@@ -23,6 +27,10 @@ class Outer {
 	}
 }
 
+/**
+ * @author muzir
+ *
+ */
 public class Exercise1 {
 	public static void main(String[] args) {
 		Outer outer = new Outer("outer");

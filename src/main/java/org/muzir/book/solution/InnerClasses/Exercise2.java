@@ -1,5 +1,9 @@
 package org.muzir.book.solution.InnerClasses;
 
+/**
+ * @author muzir
+ *
+ */
 class CellPhone {
 	String brand = "HTC";
 
@@ -10,6 +14,10 @@ class CellPhone {
 
 }
 
+/**
+ * @author muzir
+ *
+ */
 public class Exercise2 {
 
 	public static void main(String[] args) {
