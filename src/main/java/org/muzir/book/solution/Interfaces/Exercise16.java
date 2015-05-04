@@ -17,7 +17,6 @@ class CharSequence implements Readable {
 		this.count = count;
 	}
 
-	@Override
 	public int read(CharBuffer cb) throws IOException {
 		if (count-- == 0) {
 			return -1;

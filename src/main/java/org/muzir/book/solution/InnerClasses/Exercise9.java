@@ -13,7 +13,6 @@ class Table {
 				_type = type;
 			}
 
-			@Override
 			public String getType() {
 				return _type;
 			}

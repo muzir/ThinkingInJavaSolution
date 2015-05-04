@@ -5,7 +5,6 @@ class Chair {
 		return new Shape() {
 			private String type = "perpendicular";
 
-			@Override
 			public String getType() {
 				return type;
 			}
