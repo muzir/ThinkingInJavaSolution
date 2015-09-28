@@ -6,7 +6,7 @@ import java.util.List;
 public class Exercise9 {
 
 	public static void main(String[] args) {
-		int number = 5;
+		int number = 89;
 		// number = Integer.parseInt(args[0]);
 		fibonacciNumber(number);
 	}

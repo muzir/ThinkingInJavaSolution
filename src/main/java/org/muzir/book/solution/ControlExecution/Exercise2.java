@@ -1,5 +1,6 @@
 package org.muzir.book.solution.ControlExecution;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Random;
 public class Exercise2 {
 
 	public static void main(String[] args) {
-		Random random = new Random();
+		Random random = new SecureRandom();
 		for (int i = 0; i < 25; i++) {
 			int firstRandomNumber = random.nextInt(100);
 			int secondRandomNumber = random.nextInt(100);

@@ -17,8 +17,7 @@ public class Exercise6 {
 			return +1;
 		} else if (testval < target) {
 			return -1;
-		} else {
-			return 0;
 		}
+		return 0;
 	}
 }

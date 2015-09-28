@@ -35,6 +35,8 @@ public class Exercise1 {
 	public static void main(String[] args) {
 		Outer outer = new Outer("outer");
 		Inner inner = outer.getInner();
+		Outer.Inner inner2 = outer.getInner();
 		System.out.println(inner.toString());
+		System.out.println(inner2.toString());
 	}
 }
