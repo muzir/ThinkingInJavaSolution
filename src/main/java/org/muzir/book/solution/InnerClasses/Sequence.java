@@ -1,4 +1,4 @@
-//: innerclasses/Sequence.java
+// : innerclasses/Sequence.java
 // Holds a sequence of Objects.
 package org.muzir.book.solution.InnerClasses;
 
@@ -34,10 +34,11 @@ public class Sequence {
 	private class SequenceSelector implements Selector {
 		private int i = 0;
 
-		public Sequence getSequence(){
+		@SuppressWarnings("unused")
+		public Sequence getSequence() {
 			return Sequence.this;
 		}
-		
+
 		public boolean end() {
 			return i == items.length;
 		}
@@ -67,5 +68,5 @@ public class Sequence {
 		}
 	}
 } /*
- * Output: 0 1 2 3 4 5 6 7 8 9
- */// :~
+	 * Output: 0 1 2 3 4 5 6 7 8 9
+	 */// :~

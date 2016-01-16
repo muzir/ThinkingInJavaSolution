@@ -27,6 +27,7 @@ public class Exercise5 {
 
 	public static void main(String[] args) {
 		Animal animal = new Animal();
+		@SuppressWarnings("unused")
 		Chetah cheetos = animal.getChetah();
 	}
 }
