@@ -26,7 +26,6 @@ public class MultiplyNestedClasses {
 	public static void main(String[] args) {
 		MNA mna = new MNA();
 		MNA.A manaa = mna.new A();
-		// manaa.g(); //can't invoke private method why?
 		MNA.A.B manaab = manaa.new B();
 		manaab.h();
 	}
