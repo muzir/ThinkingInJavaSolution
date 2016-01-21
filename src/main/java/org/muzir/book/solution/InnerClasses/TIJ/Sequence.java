@@ -1,6 +1,6 @@
 // : innerclasses/Sequence.java
 // Holds a sequence of Objects.
-package org.muzir.book.solution.InnerClasses;
+package org.muzir.book.solution.InnerClasses.TIJ;
 
 /**
  * @author muzir
@@ -18,7 +18,7 @@ interface Selector {
  * @author muzir
  *
  */
-public class Sequence {
+ class Sequence {
 	private Object[] items;
 	private int next = 0;
 
