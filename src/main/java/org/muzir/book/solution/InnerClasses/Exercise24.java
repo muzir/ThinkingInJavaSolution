@@ -6,6 +6,7 @@ package org.muzir.book.solution.InnerClasses;
 // classes allow you to encapsulate different
 // functionality for each type of event.
 class GreenhouseControls extends Controller {
+	@SuppressWarnings("unused")
 	private boolean light = false;
 
 	public class LightOn extends Event {
@@ -40,6 +41,7 @@ class GreenhouseControls extends Controller {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private boolean water = false;
 
 	public class WaterOn extends Event {
@@ -72,6 +74,7 @@ class GreenhouseControls extends Controller {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private String thermostat = "Day";
 
 	public class ThermostatNight extends Event {
@@ -104,6 +107,7 @@ class GreenhouseControls extends Controller {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private String fans = "off";
 
 	public class FansOn extends Event {
@@ -189,6 +193,10 @@ class GreenhouseControls extends Controller {
 	}
 } /// :~
 
+/**
+ * @author erhun.baycelik
+ *
+ */
 public class Exercise24 {
 	public static void main(String[] args) {
 		GreenhouseControls gc = new GreenhouseControls();
