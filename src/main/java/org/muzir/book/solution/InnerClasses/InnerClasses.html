@@ -14,10 +14,32 @@
 		the members of that enclosing object without any special
 		qualifications. In addition, inner classes has the access rights all
 		the members of the outer classes.</p>
-		<p class="page">349</p>
+	<p class="page">349</p>
 	<p>Inner class has automatic access to the members of the enclosing
 		class. HOW? Inner classes secretly captures a reference for creating
 		it. Then, when you refer to a member of the enclosing class, that
 		reference is used to select member.</p>
+	<p class="page">353</p>
+	<p>Non inner classes can't be private or protected. They just can
+		be public or package access level.</p>
+	<p class="page">361</p>
+	<p>Anonymous inner classes are somewhat limited compared to regular
+		inheritance, because they can either extend a class or implement an
+		interface, but not both. And if you do implement an interface, you can
+		only implement one</p>
+	<p class="page">364</p>
+	<p>If you don't need a conection between inner and outer class you
+		can define nested classes which mean static inner classes. Inner
+		classes holds the reference of the outer classes. But nested classes
+		don't have this outer class reference.</p>
+	<p class="page">381</p>
+	<p>With the help of inner classes, we can simulate multiple
+		inheritance.Because we can create different implementation for
+		interfaces, abstract classes also use outer class too. So like extends
+		both outer classes and abstract classes.</p>
+	<p class="page">387</p>
+	<p>If you need a named constructor or if you need a more than one
+		object of that class, you can prefer local inner class instead of
+		anonymous class.Otherwise they are same.</p>
 </body>
 </html>
