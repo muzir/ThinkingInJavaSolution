@@ -23,6 +23,7 @@ class Orange {
 public class ApplesAndOrangesWithoutGenerics {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
+		@SuppressWarnings("rawtypes")
 		ArrayList apples = new ArrayList();
 		for (int i = 0; i < 3; i++)
 			apples.add(new Apple());
