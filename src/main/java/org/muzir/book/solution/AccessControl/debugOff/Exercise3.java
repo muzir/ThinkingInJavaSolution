@@ -1,6 +1,7 @@
 package org.muzir.book.solution.AccessControl.debugOff;
 
 public class Exercise3 {
+	@SuppressWarnings("unused")
 	private static String info;
 
 	public Exercise3() {

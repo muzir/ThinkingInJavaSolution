@@ -3,6 +3,7 @@ package org.muzir.book.solution.ReusingClasses;
 public class Exercise6 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Chess chess = new Chess();
 
 	}

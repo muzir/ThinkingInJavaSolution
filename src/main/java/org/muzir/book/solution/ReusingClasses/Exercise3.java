@@ -27,6 +27,7 @@ class Cartoon extends Drawing {
 
 public class Exercise3 {
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Cartoon cartoon = new Cartoon();
 	}
 }

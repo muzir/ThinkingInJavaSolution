@@ -16,7 +16,9 @@ class Poppet {
 
 public class Exercise18 {
 
+	@SuppressWarnings("unused")
 	private final int i = 0; // Initialized final
+	@SuppressWarnings("unused")
 	private final int j; // Blank final
 	private final Poppet p; // Blank final reference
 
@@ -33,6 +35,7 @@ public class Exercise18 {
 
 	public static void main(String[] args) {
 		Exercise18 exercise18 = new Exercise18();
+		@SuppressWarnings("unused")
 		Exercise18 exercise18WithParam = new Exercise18(47);
 		System.out.println(exercise18.p.toString());
 	}

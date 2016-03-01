@@ -42,6 +42,7 @@ public class Exercise13 {
 	public static void main(String[] args) {
 		System.out.println(Rhinos.rhino1.toString());
 		System.out.println(Rhinos.rhino2.toString());
+		@SuppressWarnings("unused")
 		Rhinos rhinos = new Rhinos();
 	}
 }

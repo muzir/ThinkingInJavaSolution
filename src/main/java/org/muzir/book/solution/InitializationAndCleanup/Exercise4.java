@@ -14,6 +14,7 @@ class EmptyObject2 {
 public class Exercise4 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		EmptyObject2 emptyObjectWithMessage = new EmptyObject2(
 				" Peace all the world.");
 	}

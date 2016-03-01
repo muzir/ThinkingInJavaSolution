@@ -3,6 +3,7 @@ package org.muzir.book.solution.ReusingClasses;
 public class Exercise8 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		DerivedClass derivedClass = new DerivedClass(10);
 	}
 

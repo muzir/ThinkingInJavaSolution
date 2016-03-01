@@ -18,6 +18,7 @@ package org.muzir.book.solution.InitializationAndCleanup;
 public class Exercise3 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		EmptyObject1 emptyObject = new EmptyObject1();
 
 	}

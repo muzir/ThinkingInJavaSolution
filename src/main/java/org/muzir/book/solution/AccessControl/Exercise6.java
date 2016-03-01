@@ -18,6 +18,7 @@ class Human {
 public class Exercise6 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Human human = new Human();
 	}
 

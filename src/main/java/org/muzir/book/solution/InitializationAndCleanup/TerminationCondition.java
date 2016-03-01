@@ -21,6 +21,7 @@ class Book {
 
 public class TerminationCondition {
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Book novel = new Book(true);
 		// Drop the reference, forget to clean up:
 		new Book(true);

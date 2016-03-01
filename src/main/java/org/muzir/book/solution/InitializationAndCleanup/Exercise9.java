@@ -18,6 +18,7 @@ class OverloadConstructor {
 public class Exercise9 {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		OverloadConstructor overloadConstructor = new OverloadConstructor(
 				"test");
 	}
