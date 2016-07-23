@@ -61,7 +61,7 @@ class Sequence {
 
 public class Exercise3 {
 	public static void main(String[] args) {
-		Sequence sequence = new Sequence(10);
+		Exercise9 sequence = new Exercise9(10);
 		for (int i = 0; i < 10; i++)
 			sequence.add(Integer.toString(i));
 		Selector selector = sequence.selector();
