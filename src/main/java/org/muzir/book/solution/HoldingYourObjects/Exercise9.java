@@ -2,69 +2,52 @@
 // Holds a sequence of Objects.
 package org.muzir.book.solution.HoldingYourObjects;
 
-/// **
-// * @author muzir
-// *
-// */
-// interface Selector {
-// boolean end();
-//
-// Object current();
-//
-// void next();
-// }
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author muzir
  *
  */
- class Exercise9 {
-	private Object[] items;
-	private int next = 0;
+class Exercise9 {
+	private List<Object> items;
 
 	public Exercise9(int size) {
-		items = new Object[size];
+		items = new ArrayList<Object>(size);
 	}
 
 	public void add(Object x) {
-		if (next < items.length)
-			items[next++] = x;
+		items.add(x);
 	}
 
-	private class SequenceSelector implements Selector {
+	private class Sequence {
 		private int i = 0;
-		//
-		// @SuppressWarnings("unused")
-		// public Sequence getSequence() {
-		// return Sequence.this;
-		// }
 
 		public boolean end() {
-			return i == items.length;
+			return i == items.size();
 		}
 
 		public Object current() {
-			return items[i];
+			return items.get(i);
 		}
 
 		public void next() {
-			if (i < items.length)
+			Iterator<Object> iterator = items.iterator();
+			if (iterator.hasNext())
 				i++;
 		}
 	}
 
-	public Selector selector() {
-		return new SequenceSelector();
-	}
-
 	public static void main(String[] args) {
-		Sequence sequence = new Sequence(10);
-		for (int i = 0; i < 10; i++)
-			sequence.add(Integer.toString(i));
-		Selector selector = sequence.selector();
-		while (!selector.end()) {
-			System.out.print(selector.current() + " ");
-			selector.next();
+		Exercise9 exercise9 = new Exercise9(10);
+		for (int i = 0; i < 10; i++) {
+			exercise9.add(Integer.toString(i));
+		}
+		Sequence sequence = exercise9.new Sequence();
+		while (!sequence.end()) {
+			System.out.print(sequence.current() + " ");
+			sequence.next();
 		}
 	}
 } /*

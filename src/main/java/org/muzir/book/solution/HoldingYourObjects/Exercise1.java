@@ -19,6 +19,5 @@ public class Exercise1 {
 	public static void main(String[] args) {
 		List<Gerbil> gerbils = Arrays.asList(new Gerbil(0), new Gerbil(0), new Gerbil(1), new Gerbil(100));
 		gerbils.forEach(u -> u.hop());
-
 	}
 }

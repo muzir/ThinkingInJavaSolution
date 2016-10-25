@@ -6,7 +6,6 @@ public class Cats {
 	protected class Lion implements Animal {
 
 		public Lion() {
-			// TODO Auto-generated constructor stub
 		}
 
 		public void isWarmBlooded() {
