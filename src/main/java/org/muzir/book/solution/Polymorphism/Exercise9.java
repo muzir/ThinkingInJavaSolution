@@ -17,10 +17,16 @@ class Mouse extends Rodent {
 	}
 }
 
-class Gerbil extends Rodent {
+class Gerbil extends Rodent implements Comparable {
 	@Override
 	protected void isWho() {
 		System.out.println("Gerbil nibble");
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
 

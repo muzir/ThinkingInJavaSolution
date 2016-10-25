@@ -3,10 +3,10 @@ package org.muzir.book.solution.HoldingYourObjects;
 import java.util.Arrays;
 import java.util.List;
 
-class Gerbil {
+class Gerbilo {
 	private int gerbilNumber;
 
-	public Gerbil(int gerbilNumber) {
+	public Gerbilo(int gerbilNumber) {
 		this.gerbilNumber = gerbilNumber;
 	}
 
@@ -17,7 +17,7 @@ class Gerbil {
 
 public class Exercise1 {
 	public static void main(String[] args) {
-		List<Gerbil> gerbils = Arrays.asList(new Gerbil(0), new Gerbil(0), new Gerbil(1), new Gerbil(100));
+		List<Gerbilo> gerbils = Arrays.asList(new Gerbilo(0), new Gerbilo(0), new Gerbilo(1), new Gerbilo(100));
 		gerbils.forEach(u -> u.hop());
 	}
 }

@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Exercise8 {
 	public static void main(String[] args) {
-		List<Gerbil> gerbils = Arrays.asList(new Gerbil(0), new Gerbil(0), new Gerbil(1), new Gerbil(100));
-		Iterator<Gerbil> iterator = gerbils.iterator();
+		List<Gerbilo> gerbils = Arrays.asList(new Gerbilo(0), new Gerbilo(0), new Gerbilo(1), new Gerbilo(100));
+		Iterator<Gerbilo> iterator = gerbils.iterator();
 		while (iterator.hasNext()) {
-			Gerbil g = iterator.next();
+			Gerbilo g = iterator.next();
 			g.hop();
 		}
 	}
